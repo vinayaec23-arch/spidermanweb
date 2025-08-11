@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I AM SPIDER-MAN</title>
+<style>
+  body {
+    background: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+  }
+  .center {
+    position: relative;
+  }
+  .sticker {
+    width: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+    border-radius: 8px;
+  }
+  #title {
+    color: red;
+    font-size: 3em;
+    text-shadow: 3px 3px yellow;
+    opacity: 0;
+    transition: opacity 1s ease;
+    margin-top: 20px;
+    font-family: 'Comic Sans MS', cursive;
+  }
+</style>
+</head>
+<body>
+
+<div class="center">
+  <img src="https://images.squarespace-cdn.com/content/v1/608d9ef497633c6b6eb71caf/1620608763719-SJ1UOF4JVNGUEEMCY8B9/spider-man-into-the-spider-verse-nawpic-2-scaled-e1605828226174.jpg" class="sticker" alt="Spider-Man Into the Spider-Verse">
+  
+
+  <img src="https://variety.com/wp-content/uploads/2023/05/spider-2.jpg?w=1000&h=563&crop=1" class="sticker" alt="Spider-Man movie image">
+  
+  <img src="https://m.media-amazon.com/images/M/MV5BNDBkMzVmNGQtYTM2OC00OWRjLTk5OWMtNzNkMDI4NjFjNTZmXkEyXkFqcGdeQXZ3ZXNsZXk@._V1_.jpg" class="sticker" alt="Spider-Man close-up">
+  
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7Os3qVNmEuTUcrB3m16x7ZezFrhmJ1FQH7VLtEsZqBberagwF3k9vtrkaAuaadIQuGzU&usqp=CAU" class="sticker" alt="Spider-Man cartoon logo">
+</div>
+
+<h1 id="title">I AM SPIDER-MAN 🕷️</h1>
+
+<script>
+  const stickers = document.querySelectorAll('.sticker');
+  const title = document.getElementById('title');
+
+  stickers.forEach((sticker, index) => {
+    setTimeout(() => {
+      sticker.style.transform = `translate(${(index - 2) * 250}px, -50%) scale(1)`;
+    }, index * 600);
+  });
+
+  setTimeout(() => {
+    title.style.opacity = 1;
+  }, stickers.length * 600 + 500);
+</script>
+
+</body>
+</html>
